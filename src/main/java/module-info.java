@@ -7,4 +7,8 @@ module org.example.textprocessingdatamanagementtool {
 
     opens org.example.textprocessingdatamanagementtool to javafx.fxml;
     exports org.example.textprocessingdatamanagementtool;
+
+    // Export the package containing your JavaFX application class
+    exports org.example.textprocessingdatamanagementtool.regex;
+
 }
