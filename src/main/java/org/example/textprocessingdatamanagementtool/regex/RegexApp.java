@@ -1,4 +1,4 @@
-package org.example.textprocessingdatamanagementtool.regex;//package org.example.textprocessingdatamanagementtool.regex;
+package org.example.textprocessingdatamanagementtool.regex;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -11,7 +11,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-public class RegexApp extends Application {
+import static javafx.application.Application.launch;
+
+public class RegexApp {
 
     private TextField textInput;
     private TextField patternInput;
@@ -19,11 +21,15 @@ public class RegexApp extends Application {
     private TextArea resultTextArea;
     private RegularExpressions regexExpression;
 
-    @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Regex Operations Tool");
-
+    public RegexApp() {
         regexExpression = new RegularExpressions();
+    }
+
+    public VBox createRegexSection() {
+        VBox vBox = new VBox(20);
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setPadding(new Insets(20));
+        vBox.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 
         // Header Label
         Label headerLabel = new Label("Regex Operations Tool");
@@ -62,7 +68,6 @@ public class RegexApp extends Application {
         resultTextArea.setFont(Font.font("Arial", 14));
         resultTextArea.setStyle("-fx-control-inner-background: #f5f5f5;");
 
-        // Layouts
         VBox inputBox = new VBox(10, textLabel, textInput, patternLabel, patternInput, replacementLabel, replacementInput);
         inputBox.setAlignment(Pos.CENTER_LEFT);
         inputBox.setPadding(new Insets(10));
@@ -71,16 +76,8 @@ public class RegexApp extends Application {
         buttonBox.setAlignment(Pos.CENTER);
         buttonBox.setPadding(new Insets(10));
 
-        VBox vBox = new VBox(20);
-        vBox.setAlignment(Pos.CENTER);
-        vBox.setPadding(new Insets(20));
         vBox.getChildren().addAll(headerLabel, inputBox, buttonBox, resultTextArea);
-        vBox.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-
-        // Scene
-        Scene scene = new Scene(vBox, 600, 500);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        return vBox;
     }
 
     private void searchPattern() {
@@ -121,7 +118,5 @@ public class RegexApp extends Application {
         resultTextArea.setText(message);
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+
 }
