@@ -10,5 +10,6 @@ module org.example.textprocessingdatamanagementtool {
 
     // Export the package containing your JavaFX application class
     exports org.example.textprocessingdatamanagementtool.regex;
+    exports org.example.textprocessingdatamanagementtool.data;
 
 }
