@@ -86,10 +86,16 @@ The application uses inline CSS for styling to ensure a visually consistent and 
 1. **Clone the Repository:**
 
    ```sh
-   https://github.com/gertrude654/Text-Processing-and-Data-Management-Tool
+   hgit clone https://github.com/manziirw/Scrum-TextProcessor-Flow.git
+   cd Scrum-TextProcessor-Flow
+
+2. **Install Dependencies:**
+
+   ```sh
+   mvn install
 
 
-2. **Run tests:**
+3. **Run tests:**
 
    ```sh
    mvn test
