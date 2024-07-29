@@ -86,8 +86,8 @@ The application uses inline CSS for styling to ensure a visually consistent and 
 1. **Clone the Repository:**
 
    ```sh
-   hgit clone https://github.com/manziirw/Scrum-TextProcessor-Flow.git
-   cd Scrum-TextProcessor-Flow
+   hgit clone https://github.com/gertrude654/Text-Processing-and-Data-Management-Tool
+   cd Text-Processing-and-Data-Management-Tool
 
 2. **Install Dependencies:**
 
